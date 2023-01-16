@@ -1,38 +1,84 @@
+
 .App {
   text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  margin-top: 10%;
+  background-image: linear-gradient(to right,#0266e7,#33aeff);
+  justify-content: space-around;
+  
+}
+.pricing-card{
+  background-color: rgb(243, 241, 239);
+  border-radius: 1rem;
+  margin:5rem 0 5rem 0;
+  text-align: center;
+  font-size: large;
+  width: 30%;
+  
+}
+.pricing-card:hover{  
+  transform: translateY(-1.5rem)
+}
+.pricing-card:hover button{
+  background-color: #0062e6 ;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pricing-card .disabled{
+  color: grey;
+}
+hr{
+  width: 80%;
+  margin-left: 10%;
+}
+ul {
+  list-style-type: none;
+  text-align: start;
+  
+}
+ul li{
+  margin-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul li::before {
+  content: "✔";
+}
+ul li.disabled::before {
+  content: "✖";
+}
+ul li.disabled {
+  color: rgb(0, 0, 0);
+  opacity: 0.5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+button{
+  background-color: #569afe;
+  width: 90%;
+  height: 10%;
+  margin-bottom: 3rem;
+  border: none;
+  border-radius: 2rem;
+  font-weight:500;
+  color: white;
+  font-size: 18px;
+}
+button:active{
+  border: 5px solid #b1cbf1;
+}
+
+@media (max-width:1200px){
+.container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.pricing-card{
+  width: 60%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
